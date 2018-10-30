@@ -71,7 +71,7 @@ io.on('connection', socket => {
       }
       callback(chat.messages, chat.checkPoints);
     } catch (e) {
-      logger.error('getMessages : %e', e);
+      logger.error('getMessages : %o', e);
     }
   });
 
