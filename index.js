@@ -66,7 +66,7 @@ io.on('connection', socket => {
         chat = await Chat.create({
           _id: params.reservationId,
           messages: [],
-          checkPoints
+          checkPoints: params.checkPoints
         });
       }
       callback(chat.messages, chat.checkPoints);
