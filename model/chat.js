@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const chatSchema = new mongoose.Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
-    checkPoints: {},
+    checkPoints: { type: mongoose.Schema.Types.Mixed, default: {} },
     messages: [
       {
         content: String,
@@ -21,10 +21,10 @@ const chatSchema = new mongoose.Schema(
   }
 );
 
-chatSchema.statics.updateChecked = async function(userId) {
-  const Chat = this;
-  Chat.find;
-};
+// chatSchema.statics.updateChecked = async function(userId) {
+//   const Chat = this;
+//   Chat.find;
+// };
 
 const Chat = mongoose.model('Chat', chatSchema);
 

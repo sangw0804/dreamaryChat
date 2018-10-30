@@ -18,19 +18,42 @@ const socketIO = require('socket.io');
 const io = socketIO(server);
 
 io.on('connection', socket => {
-  console.log('user join!');
-
   socket.on('join', (params, callback) => {
+    console.log('join!');
     socket.join(params.reservationId);
+    // callback();
+  });
+
+  socket.on('joinChat', (params, callback) => {
+    console.log('joinChat!');
+    socket.join(`${params.reservationId}_chat`);
+
     callback();
   });
 
-  socket.on('updateCheckpoint', (params, callback) => {
-    let chat = await Chat.findById(params.reservationId);
-    params.names.forEach(name => {
-      chat.checkPoints[name] = new Date().getTime();
-    });
+  socket.on('leaveChat', (params, callback) => {
+    console.log('leaveChat!');
+    socket.leave(`${params.reservationId}_chat`);
+  });
 
+  socket.on('updateCheckpoint', async (params, callback) => {
+    let chat = await Chat.findById(params.reservationId);
+    console.log(chat);
+
+    const clients = io.sockets.adapter.rooms[`${params.reservationId}_chat`].sockets;
+    console.log(io.sockets.adapter.rooms);
+    const numClients = typeof clients !== 'undefined' ? Object.keys(clients).length : 0;
+
+    console.log(numClients);
+    chat.checkPoints[params.names[0]] = new Date().getTime();
+
+    if (numClients === 2) chat.checkPoints[params.names[1]] = new Date().getTime();
+
+    chat.markModified('checkPoints');
+    await chat.save();
+    console.log(chat);
+
+    socket.to(params.reservationId).emit('newCheckPoints', { checkPoints: chat.checkPoints });
     callback(chat.checkPoints);
   });
 
@@ -39,11 +62,12 @@ io.on('connection', socket => {
     if (!chat) {
       chat = await Chat.create({
         _id: params.reservationId,
-        messages: []
+        messages: [],
+        checkPoints
       });
     }
 
-    callback(chat.messages);
+    callback(chat.messages, chat.checkPoints);
   });
 
   socket.on('createMessage', async (params, callback) => {
@@ -62,7 +86,7 @@ io.on('connection', socket => {
       createdAt: nowTime
     });
     await chat.save();
-  
+
     callback();
   });
 });
