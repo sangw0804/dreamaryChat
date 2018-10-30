@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/sangwoo/Desktop/programming/dreamaryChat/log/.ce130a2de95dc607c9ebd3d2a5410ecb4bec1cdb-audit.json",
+    "files": [
+        {
+            "date": 1540916906068,
+            "name": "/Users/sangwoo/Desktop/programming/dreamaryChat/log/2018-10-31_error.log",
+            "hash": "8a547354cdf55ddbedfdeda90577d99e"
+        }
+    ]
+}
