@@ -22,6 +22,16 @@ io.on('connection', socket => {
 
   socket.on('join', (params, callback) => {
     socket.join(params.reservationId);
+    callback();
+  });
+
+  socket.on('updateCheckpoint', (params, callback) => {
+    let chat = await Chat.findById(params.reservationId);
+    params.names.forEach(name => {
+      chat.checkPoints[name] = new Date().getTime();
+    });
+
+    callback(chat.checkPoints);
   });
 
   socket.on('getMessages', async (params, callback) => {
@@ -52,6 +62,8 @@ io.on('connection', socket => {
       createdAt: nowTime
     });
     await chat.save();
+  
+    callback();
   });
 });
 
