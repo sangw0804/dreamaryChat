@@ -69,9 +69,22 @@ io.on('connection', socket => {
           checkPoints: params.checkPoints
         });
       }
-      callback(chat.messages, chat.checkPoints);
+      let i = chat.messages.length - 31;
+      if (i < 0) i = 0;
+      callback(chat.messages.slice(i), chat.checkPoints);
     } catch (e) {
       logger.error('getMessages : %o', e);
+    }
+  });
+
+  socket.on('getMoreMessages', async (params, callback) => {
+    try {
+      let chat = await Chat.findById(params.reservationId);
+      let i = chat.messages.length - (31 + params.msgNum);
+      if (i < 0) i = 0;
+      callback(chat.messages.slice(i), chat.checkPoints);
+    } catch (e) {
+      logger.error('getMoreMessages : %o', e);
     }
   });
 
