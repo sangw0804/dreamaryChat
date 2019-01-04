@@ -6,14 +6,9 @@
     "auditLog": "/Users/sangwoo/Desktop/programming/dreamaryChat/log/.ce130a2de95dc607c9ebd3d2a5410ecb4bec1cdb-audit.json",
     "files": [
         {
-            "date": 1540916906068,
-            "name": "/Users/sangwoo/Desktop/programming/dreamaryChat/log/2018-10-31_error.log",
-            "hash": "8a547354cdf55ddbedfdeda90577d99e"
-        },
-        {
-            "date": 1541153389986,
-            "name": "/Users/sangwoo/Desktop/programming/dreamaryChat/log/2018-11-02_error.log",
-            "hash": "bf30dc5379df2b25af3e13b2605efec6"
+            "date": 1546508273577,
+            "name": "/Users/sangwoo/Desktop/programming/dreamaryChat/log/2019-01-03_error.log",
+            "hash": "8351abebe9f3c5d566ad929bbb0a6826"
         }
     ]
 }
