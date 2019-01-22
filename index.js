@@ -1,24 +1,37 @@
 const http = require('http');
+const https = require('https');
 const express = require('express');
+const fs = require('fs');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+
 const logger = require('./log');
+const config = require('./config');
 
 const { Chat } = require('./model/chat');
 
 app.use(cors());
 
 mongoose.connect(
-  'mongodb://localhost:27017/dreamary_chat',
+  config.MONGO_DB_URL,
   { useNewUrlParser: true }
 );
 
 const server = http.createServer(app);
+const server2 = https.createServer(
+  {
+    ca: fs.readFileSync('/etc/letsencrypt/archive/dreamaryserver.ga/chain1.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/archive/dreamaryserver.ga/privkey1.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/archive/dreamaryserver.ga/cert1.pem')
+  },
+  app
+);
 const socketIO = require('socket.io');
 const io = socketIO(server);
+const io2 = socketIO(server2);
 
-io.on('connection', socket => {
+const callback = socket => {
   socket.on('join', (params, callback) => {
     logger.info('join!');
     socket.join(params.reservationId);
@@ -111,9 +124,17 @@ io.on('connection', socket => {
       logger.error('createMessage : %o', e);
     }
   });
-});
+};
+
+io.on('connection', callback);
+io2.on('connection', callback);
 
 const port = process.env.PORT || 3030;
 server.listen(port, () => {
   logger.info(`server is listening to :${port}`);
+});
+
+const port2 = 443;
+server2.listen(port2, () => {
+  logger.info(`secured server is listening to :${port2}`);
 });
