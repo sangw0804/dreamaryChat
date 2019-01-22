@@ -10,7 +10,7 @@ const { Chat } = require('./model/chat');
 app.use(cors());
 
 mongoose.connect(
-  'mongodb://localhost:27017/dreamary_chat',
+  'mongodb://dreamary:dreamary0418@52.78.17.46:27017/dreamary_chat',
   { useNewUrlParser: true }
 );
 

@@ -1,0 +1,59 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/home/ubuntu/dreamaryChat/log/.fe8a006fb231380ec4bafc205f4d4e9bea5d5bdd-audit.json",
+    "files": [
+        {
+            "date": 1546959415495,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-08_error.log",
+            "hash": "e06f9f4cd161048e18f9327ec84bd492"
+        },
+        {
+            "date": 1546995112249,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-09_error.log",
+            "hash": "2697d06da964a23c324f24ce050f2ad7"
+        },
+        {
+            "date": 1547171639415,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-11_error.log",
+            "hash": "e2c09b2feb9a4ae74e4785d5037d8261"
+        },
+        {
+            "date": 1547271941929,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-12_error.log",
+            "hash": "44b6497950c11a67f19ebcae13a8671e"
+        },
+        {
+            "date": 1547430049130,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-14_error.log",
+            "hash": "1635bf70fb491491f8e7f6dbea5b8a2a"
+        },
+        {
+            "date": 1547521190669,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-15_error.log",
+            "hash": "a1aa246bdd1f45a58a901b5f7cbdf375"
+        },
+        {
+            "date": 1547703434408,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-17_error.log",
+            "hash": "4a16d35569fb86505db7039377a3ce2d"
+        },
+        {
+            "date": 1547782890795,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-18_error.log",
+            "hash": "7477956c17ca6d57dad918980eba0ad0"
+        },
+        {
+            "date": 1548004400438,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-20_error.log",
+            "hash": "714aa865faf1383e141ccbdd368796f0"
+        },
+        {
+            "date": 1548032203365,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-21_error.log",
+            "hash": "f2648b0e1b8bbe01874c97215cd3126a"
+        }
+    ]
+}
