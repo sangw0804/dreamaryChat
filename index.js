@@ -5,14 +5,16 @@ const fs = require('fs');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
+
 const logger = require('./log');
+const config = require('./config');
 
 const { Chat } = require('./model/chat');
 
 app.use(cors());
 
 mongoose.connect(
-  'mongodb://dreamary:dreamary0418@52.78.17.46:27017/dreamary_chat',
+  config.MONGO_DB_URL,
   { useNewUrlParser: true }
 );
 
