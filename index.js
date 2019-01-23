@@ -10,6 +10,7 @@ const logger = require('./log');
 const config = require('./config');
 
 const { Chat } = require('./model/chat');
+const { alarmTalk } = require('./helpers/alarmTalk');
 
 app.use(cors());
 
@@ -79,7 +80,15 @@ const callback = (socket, io) => {
         chat = await Chat.create({
           _id: params.reservationId,
           messages: [],
-          checkPoints: params.checkPoints
+          checkPoints: params.checkPoints,
+          user: {
+            name: params.user.name,
+            phoneNumber: params.user.phoneNumber
+          },
+          designer: {
+            name: params.designer.name,
+            phoneNumber: params.designer.phoneNumber
+          }
         });
       }
       let i = chat.messages.length - 31;
@@ -117,6 +126,12 @@ const callback = (socket, io) => {
         to: params.to,
         createdAt: nowTime
       });
+
+      // 첫 메세지일 경우 알람톡 전송
+      if (chat.messages.length === 1) {
+        // alarmTalk();
+      }
+
       await chat.save();
 
       callback();
