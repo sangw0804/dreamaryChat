@@ -31,7 +31,7 @@ const socketIO = require('socket.io');
 const io = socketIO(server);
 const io2 = socketIO(server2);
 
-const callback = socket => {
+const callback = (socket, io) => {
   socket.on('join', (params, callback) => {
     logger.info('join!');
     socket.join(params.reservationId);
@@ -129,8 +129,8 @@ const callback = socket => {
   });
 };
 
-io.on('connection', callback);
-io2.on('connection', callback);
+io.on('connection', socket => callback(socket, io));
+io2.on('connection', socket => callback(socket, io2));
 
 const port = process.env.PORT || 3030;
 server.listen(port, () => {
