@@ -6,11 +6,6 @@
     "auditLog": "/home/ubuntu/dreamaryChat/log/.b5d5d1bae929fe448e957bb9dfcfb0f579e8498f-audit.json",
     "files": [
         {
-            "date": 1546994264358,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-09.log",
-            "hash": "f91f5d65c6ed6f62f35b2fd31b4844a4"
-        },
-        {
             "date": 1547079339931,
             "name": "/home/ubuntu/dreamaryChat/log/2019-01-10.log",
             "hash": "aa5ec9cec27411adfed90c414699cca3"
@@ -74,6 +69,11 @@
             "date": 1548123755468,
             "name": "/home/ubuntu/dreamaryChat/log/2019-01-22.log",
             "hash": "3d97f748fdbbc3e8cf29ed918eb0507d"
+        },
+        {
+            "date": 1548209721907,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-23.log",
+            "hash": "ce0494ec342d3bd99ff14214160c8587"
         }
     ]
 }

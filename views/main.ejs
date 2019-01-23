@@ -1,0 +1,9 @@
+<% include partials/header %>
+
+<h1>굳</h1>
+
+<% chats.forEach(chat => { %>
+  <%= JSON.stringify(chat); %>
+<% }); %>
+
+<% include partials/footer %>

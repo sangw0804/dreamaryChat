@@ -6,16 +6,6 @@
     "auditLog": "/home/ubuntu/dreamaryChat/log/.fe8a006fb231380ec4bafc205f4d4e9bea5d5bdd-audit.json",
     "files": [
         {
-            "date": 1546959415495,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-08_error.log",
-            "hash": "e06f9f4cd161048e18f9327ec84bd492"
-        },
-        {
-            "date": 1546995112249,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-09_error.log",
-            "hash": "2697d06da964a23c324f24ce050f2ad7"
-        },
-        {
             "date": 1547171639415,
             "name": "/home/ubuntu/dreamaryChat/log/2019-01-11_error.log",
             "hash": "e2c09b2feb9a4ae74e4785d5037d8261"
@@ -54,6 +44,16 @@
             "date": 1548032203365,
             "name": "/home/ubuntu/dreamaryChat/log/2019-01-21_error.log",
             "hash": "f2648b0e1b8bbe01874c97215cd3126a"
+        },
+        {
+            "date": 1548141202467,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-22_error.log",
+            "hash": "cd6593bd6764ba51b7ab97bb05e29185"
+        },
+        {
+            "date": 1548210104117,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-23_error.log",
+            "hash": "a9e323a89c6ba699f2b057fdbdbd8546"
         }
     ]
 }
