@@ -127,12 +127,14 @@ const callback = (socket, io) => {
         createdAt: nowTime
       });
 
-      // 첫 메세지일 경우 알람톡 전송
-      if (chat.messages.length === 1) {
-        // alarmTalk();
-      }
-
       await chat.save();
+
+      // 첫 메세지일 경우 알람톡 전송
+      if (chat.messages.length === 1 && chat.user.name) {
+        const [template, is_d] =
+          chat.user.name === params.from ? ['designerInformMessage', false] : ['userInformMessage', true];
+        await alarmTalk(is_d, template, chat._id);
+      }
 
       callback();
     } catch (e) {
