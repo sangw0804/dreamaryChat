@@ -4,6 +4,14 @@ const chatSchema = new mongoose.Schema(
   {
     _id: mongoose.Schema.Types.ObjectId,
     checkPoints: { type: mongoose.Schema.Types.Mixed, default: {} },
+    user: {
+      type: mongoose.Schema.Types.Mixed,
+      default: {}
+    },
+    designer: {
+      type: mongoose.Schema.Types.Mixed,
+      default: {}
+    },
     messages: [
       {
         content: String,
