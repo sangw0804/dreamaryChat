@@ -23,7 +23,7 @@ const alarmAxios = axios.create({
   }
 });
 
-const alarmTalk = async (is_d, template, chat_id, options = {}) => {
+const alarmTalk = async (from_u, template, chat_id, options = {}) => {
   try {
     options.FAILED_TYPE = 'N';
     options.BTN_TYPES = '웹링크';
@@ -31,8 +31,8 @@ const alarmTalk = async (is_d, template, chat_id, options = {}) => {
     [options.TEMPLATE_CODE, options.BTN_TXTS, options.BTN_URLS1, options.BTN_URLS2] = alarmTemplates[template];
 
     const chat = await Chat.findById(chat_id);
-    const user = is_d ? chat.designer : chat.user;
-    const oppenent = is_d ? chat.user : chat.designer;
+    const user = from_u ? chat.designer : chat.user;
+    const oppenent = from_u ? chat.user : chat.designer;
 
     options.PHONE = user.phoneNumber;
 

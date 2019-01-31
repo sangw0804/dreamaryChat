@@ -131,9 +131,9 @@ const callback = (socket, io) => {
 
       // 첫 메세지일 경우 알람톡 전송
       if (chat.messages.length === 1 && chat.user && chat.user.name) {
-        const [template, is_d] =
-          chat.user.name === params.from ? ['designerInformMessage', false] : ['userInformMessage', true];
-        await alarmTalk(is_d, template, chat._id);
+        const [template, from_u] =
+          chat.user.name === params.from ? ['designerInformMessage', true] : ['userInformMessage', false];
+        await alarmTalk(from_u, template, chat._id);
       }
 
       callback();
