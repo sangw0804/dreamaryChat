@@ -12,7 +12,7 @@ const url = 'http://dreamary.net/#/message';
 
 const alarmTemplates = {
   userInformMessage: ['USE0007', buttonName, url, url],
-  designerInformMessage: ['DES0006', buttonNames, url, url]
+  designerInformMessage: ['DES0006', buttonName, url, url]
 };
 
 const alarmAxios = axios.create({
