@@ -6,46 +6,6 @@
     "auditLog": "/home/ubuntu/dreamaryChat/log/.b5d5d1bae929fe448e957bb9dfcfb0f579e8498f-audit.json",
     "files": [
         {
-            "date": 1547079339931,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-10.log",
-            "hash": "aa5ec9cec27411adfed90c414699cca3"
-        },
-        {
-            "date": 1547170310471,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-11.log",
-            "hash": "3572ed3331c5e91d1ba40879b179526c"
-        },
-        {
-            "date": 1547253894173,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-12.log",
-            "hash": "850fe9e271ee052456b4e807d2fa84c0"
-        },
-        {
-            "date": 1547337649629,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-13.log",
-            "hash": "1c80dfd2e05bef260ddf2267982b0a79"
-        },
-        {
-            "date": 1547428396486,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-14.log",
-            "hash": "b100efa51d8a94e030dea2a2710bfa7c"
-        },
-        {
-            "date": 1547515066297,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-15.log",
-            "hash": "12f6128befe31bcf20fd0790845e3721"
-        },
-        {
-            "date": 1547607007199,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-16.log",
-            "hash": "a65519441048c15d2813b65e780efd54"
-        },
-        {
-            "date": 1547683690297,
-            "name": "/home/ubuntu/dreamaryChat/log/2019-01-17.log",
-            "hash": "baefe54fddc86e4c6463b051868aeccb"
-        },
-        {
             "date": 1547773616750,
             "name": "/home/ubuntu/dreamaryChat/log/2019-01-18.log",
             "hash": "a22981764850e790a3c19c60fa08d586"
@@ -74,6 +34,46 @@
             "date": 1548209721907,
             "name": "/home/ubuntu/dreamaryChat/log/2019-01-23.log",
             "hash": "ce0494ec342d3bd99ff14214160c8587"
+        },
+        {
+            "date": 1548292472596,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-24.log",
+            "hash": "940247cc6d9e3db59fc3879e95508326"
+        },
+        {
+            "date": 1548375297835,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-25.log",
+            "hash": "ea19407f1c70ce617b0052057a882a5c"
+        },
+        {
+            "date": 1548461336053,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-26.log",
+            "hash": "925c053cbe58895ff3ab2d0879a17d2a"
+        },
+        {
+            "date": 1548552887801,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-27.log",
+            "hash": "948a1a23d50d6a49e79cee9d34af730a"
+        },
+        {
+            "date": 1548636139304,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-28.log",
+            "hash": "62dddb316be861f83d5b27b7694fe60e"
+        },
+        {
+            "date": 1548722417326,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-29.log",
+            "hash": "5aec8f5178b443ad7ff575e9a4f0aea1"
+        },
+        {
+            "date": 1548826004248,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-30.log",
+            "hash": "7775b3549e93a487f37fc9b3d2e8c5d0"
+        },
+        {
+            "date": 1548897589288,
+            "name": "/home/ubuntu/dreamaryChat/log/2019-01-31.log",
+            "hash": "87bd8b3e7290ff98ce263ec91f1bce48"
         }
     ]
 }

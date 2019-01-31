@@ -78,6 +78,7 @@ const callback = (socket, io) => {
   socket.on('getMessages', async (params, callback) => {
     try {
       let chat = await Chat.findById(params.reservationId);
+	  logger.info("%o", params);
       if (!chat) {
         chat = await Chat.create({
           _id: params.reservationId,
