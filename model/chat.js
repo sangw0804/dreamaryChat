@@ -22,7 +22,11 @@ const chatSchema = new mongoose.Schema(
         from: String,
         to: String
       }
-    ]
+    ],
+    isValid: {
+      type: Boolean,
+      default: false
+    }
   },
   {
     versionKey: false

@@ -14,10 +14,7 @@ const { alarmTalk } = require('./helpers/alarmTalk');
 
 app.use(cors());
 
-mongoose.connect(
-  config.MONGO_DB_URL,
-  { useNewUrlParser: true }
-);
+mongoose.connect(config.MONGO_DB_URL, { useNewUrlParser: true });
 
 const server = http.createServer(app);
 const server2 = https.createServer(
@@ -55,9 +52,9 @@ const callback = (socket, io) => {
     try {
       let chat = await Chat.findById(params.reservationId);
 
-	  logger.info('%o', io.sockets.adapter.rooms);
-	  logger.info('%o', params);
-	  logger.info('%o', io.sockets.adapter.rooms[`${params.reservationId}_chat`]);
+      logger.info('%o', io.sockets.adapter.rooms);
+      logger.info('%o', params);
+      logger.info('%o', io.sockets.adapter.rooms[`${params.reservationId}_chat`]);
       const clients = io.sockets.adapter.rooms[`${params.reservationId}_chat`].sockets;
       const numClients = typeof clients !== 'undefined' ? Object.keys(clients).length : 0;
 
@@ -76,10 +73,22 @@ const callback = (socket, io) => {
     }
   });
 
+  socket.on('updateIsValid', async (params, callback) => {
+    try {
+      logger.info('%o', params);
+      const chat = await Chat.findById(params.chatId);
+
+      chat.isValid = params.isValid;
+      logger.info(await chat.save());
+    } catch (e) {
+      logger.error('updateIsValid : %o', e);
+    }
+  });
+
   socket.on('getMessages', async (params, callback) => {
     try {
       let chat = await Chat.findById(params.reservationId);
-	  logger.info("%o", params);
+      logger.info('%o', params);
       if (!chat) {
         chat = await Chat.create({
           _id: params.reservationId,
@@ -92,7 +101,8 @@ const callback = (socket, io) => {
           designer: {
             name: params.designer.name,
             phoneNumber: params.designer.phoneNumber
-          }
+          },
+          isValid: true
         });
       }
       let i = chat.messages.length - 31;
