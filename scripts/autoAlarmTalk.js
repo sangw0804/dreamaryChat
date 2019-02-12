@@ -10,7 +10,6 @@ mongoose.connect(config.MONGO_DB_URL, { useNewUrlParser: true });
 const autoAlarmTalk = async () => {
   try {
     const chats = await Chat.find({ isValid: true });
-    console.log(chats);
 
     const promises = chats.map(async chat => {
       const lastMessage = chat.messages[chat.messages.length - 1];
@@ -24,7 +23,7 @@ const autoAlarmTalk = async () => {
 
           const [template, from_u] =
             chat.user.name === lastMessage.from ? ['designerInformMessage', true] : ['userInformMessage', false];
-          await alarmTalk(from_u, template, chat._id);
+		  await alarmTalk(from_u, template, chat._id);
         }
       }
     });
