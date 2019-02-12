@@ -26,6 +26,10 @@ const chatSchema = new mongoose.Schema(
     isValid: {
       type: Boolean,
       default: false
+    },
+    needAlarmTalk: {
+      type: Boolean,
+      default: true
     }
   },
   {

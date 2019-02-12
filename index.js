@@ -141,6 +141,7 @@ const callback = (socket, io) => {
         createdAt: nowTime
       });
 
+      chat.needAlarmTalk = true;
       await chat.save();
 
       // 첫 메세지일 경우 알람톡 전송
