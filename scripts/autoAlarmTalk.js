@@ -12,7 +12,7 @@ const autoAlarmTalk = async () => {
     const chats = await Chat.find({ isValid: true });
     console.log(chats);
 
-    chats.forEach(async chat => {
+    const promises = chats.map(async chat => {
       const lastMessage = chat.messages[chat.messages.length - 1];
       if (
         lastMessage &&
@@ -28,6 +28,8 @@ const autoAlarmTalk = async () => {
         }
       }
     });
+
+    return Promise.all(promises);
   } catch (e) {
     logger.error('autoAlarmTalk : %o', e);
   }
