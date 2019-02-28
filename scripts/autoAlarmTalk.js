@@ -27,7 +27,7 @@ const autoAlarmTalk = async () => {
 
           const [template, from_u] =
             chat.user.name === lastMessage.from ? ['designerInformMessage', true] : ['userInformMessage', false];
-          await alarmTalk(from_u, template, chat._id);
+		  await alarmTalk(from_u, template, chat._id);
         }
       }
     });
